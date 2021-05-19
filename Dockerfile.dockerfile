@@ -1,3 +1,3 @@
 FROM tomcat:9.0
 MAINTAINER mugunthan
-COPY rps.war /root/tomcat/webapps
+COPY rps.war /home/cloud_user/webapps

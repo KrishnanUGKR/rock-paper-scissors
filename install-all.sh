@@ -6,24 +6,21 @@ sudo service jenkins stop
 sudo service nginx stop
 
 #Java
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt update
-sudo apt install oracle-java8-installer -y
+sudo dnf update
+sudo dnf install oracle-java8-installer -y
 
 #Git and Maven
-sudo apt update
-sudo apt install git-all -y
-sudo apt-get install maven
-git config --global user.name "Triple Baconator"
-git config --global user.email triple@baconator.on.ca
-sudo apt-get install tree
-sudo apt-get install git-flow
+sudo dnf update
+sudo dnf install git-all -y
+sudo dnf install maven
+sudo dnf install tree
+sudo dnf install git-flow
 
 #Jenkins
 wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt-get update
-sudo apt-get install jenkins -y
+sudo dnf update
+sudo dnf install jenkins -y
 
 #Artifactory
 
@@ -36,8 +33,8 @@ sudo ./installService.sh
 # sudo service artifactory start
 
 #Docker
-sudo apt-get update
-sudo apt-get -y install docker.io
+sudo dnf update
+sudo dnf -y install docker.io
 sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
 sudo update-rc.d docker.io defaults
